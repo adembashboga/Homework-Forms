@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parentDiv {
+            display: flex;
+            flex-direction: column; 
+            width: 15%;
+        }
+        #parentDiv div {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm" method="get" action="">
+        <div id="parentDiv">
+            <div>
+                <label>Your email:</label>
+                <input type="email" name="email">
+            </div>
+            <div>
+                <label>Your login:</label>
+                <input type="text" name="login">
+            </div>
+            <div>
+                <label>Your password:</label>
+                <input type="password" name="password">
+            </div>
+            <div>
+                <label>Repeat password:</label>
+                <input type="password" name="repeatpassword">
+            </div><br>
+            <div>
+                <input id="but" type="submit" value="Sign Up" name="button">
+            </div>
+        </div>
+    </form>
+    <script>
+        let form = document.forms["myForm"];
+        let email = form["email"];
+        let button = document.getElementById("but");
+    
+        button.addEventListener("click", (event) => {
+            event.preventDefault(); 
+            alert(`На почту ${email.value} отправлено письмо с подтверждением!`);
+        });
+    </script>
+</body>
+</html>
